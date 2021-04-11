@@ -1,5 +1,4 @@
-## From DNA sequences to metabolic interactions: \
-building a pipeline to extract key metabolic processes
+## From DNA sequences to metabolic interactions: building a pipeline to extract key metabolic processes
 
 A proposal by Haris Zafeiropoulos
 
