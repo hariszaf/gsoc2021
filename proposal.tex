@@ -25,7 +25,7 @@
 %%%%%%%%%%%%%%%%%
 %     Title     %
 %%%%%%%%%%%%%%%%%
-\title{Google Summer of Code 2021 \\ CODING PROJECT PROPOSAL \\ Sampling on the flux space of metabolic networks to extract key processes linking multiple }
+\title{Google Summer of Code 2021 \\ CODING PROJECT PROPOSAL \\ From DNA sequences to metabolic interactions: building a pipeline to extract key metabolic processes}
 
 % \subtitle{CODING PROJECT PROPOSAL}
 \author{
@@ -61,28 +61,145 @@
 \section{The Project}
 
 
+Microbial interactions play a fundamental role in deciphering the underlying mechanisms that govern ecosystem functioning.
+Metabolic interactions allow to determine such interactions. 
+There are several ways of identifying metabolic interactions. 
+You can look at 
+1. pathway complementarity and overlap, 
+but you could also look at 
+2. seed nodes, 
+as in NetCooperate and NetCmpt (Borenstein and Freilich labs) 
+and also at 
+3. metabolite exchanges predicted by metabolic modeling 
+(which you plan to do as well). 
+
+Metabolic pathway complementarity between the species (nodes) of each association (edge) of a network will support the identification of cooperative potential.
+
+
+
+In addition, uniform sampling in the flux spaces of all paired associations will strengthen the actual associations, demonstrating robustness on exchange/competition for metabolites. 
+
+
+Automatic genome scale metabolic networks reconstruction tools, such as AuReMe (18) and CarveMe (19), have been recently developed. Once such a metabolic network exists, metabolic flux sampling can be used to study its global features, allowing the study of properties of certain components of the whole network, and deduce significant biological insights (20,21).
+microbetag will search for potential matches between both taxa in each of the network edges and the 30.000 genomes available in GTDB. For those pairs of taxa that a match is found, microbetag will implement genome-scale metabolic reconstruction tools to build their metabolic networks. 
+
+
+Aim of this project is to get the flux distributions of the processes related to the pathways both taxa of an association are involved with. 
+
+Then, microbetag will check whether the taxa of the association under study exchange or compete for metabolites in a robust way.
+
+
+
+
+
+
+I suggest to implement a pipelenine 
+
+1. get/provide a pair of .fasta files (genomes)
+2. run \texttt{AuReMe} or \texttt{CarveMe} to get metabolic networks
+3. 
+
+
 
 
 %%%%%%%%%%%%%%%%%
 %    Benefits   %
 %%%%%%%%%%%%%%%%%
+\section{Benefits to the Community}
 
+Benefit to the \texttt{volesti} as an open source library
 
+Benefit to the biologist 
 
 %%%%%%%%%%%%%%%%%
 % Deliverables  %
 %%%%%%%%%%%%%%%%%
+\section{Deliverables}
+The tasks of this project will be split in the two main periods of the project; i.e. the Community Bonding period between April 27 and May 18 (~3 weeks) and the Coding period between May 18 and August (~10 weeks). 
+At the end of the coding period, all the implementations described in the Tasks chapter will have been completed. 
+
+\texttt{VolEsti} provides a great basis for the implementation of this project. 
+Therefore, a limited amount of time is needed  to set up all the necessary coding environments. 
+A number of extra rounding algorithms will be added on the \texttt{VolEsti} package in the next few weeks; thus, working with members of the \texttt{VolEsti} group would allow us for a simultaneous  development of the source code and the interface, without unexpected delays. That said, the coding tasks could start before the bonding period is over. 
+Furthermore, a blog will be created to report the project’s progress periodically and a thorough documentation for the \texttt{VolEsti} Python interface will be delivered. The \texttt{VolEsti} package is under the LGPL-3 license, while the cobrapy package is under the GPL and cobra-toolbox under the GNU General Public License version 3.0; all open-source. Thus, I intend to give the  \texttt{VolEsti} Python interface the LGPL-3 license too. 
+
+
+
+\subsection{Bonding period (May 17 - June 7)}
+During the bonding period everything that I need to know regarding the implementation of T1 will be fully covered. 
+Thus, the source code of VolEsti will be thoroughly studied and a step-by-step guide for building the Python interface will be delivered by the end of the second week of the bonding period. 
+In its last week, everything that might be needed to be able to start coding by the end of the bonding period, will be taken care of.
+Thus, I will build a branch of the current VolEsti project at my GitHub repository [18] and a blog to report my progress periodically will be also created in my web page*. 
+The first two weeks will require a strong effort from me in comprehending the architecture of the VolEsti source code. 
+To address this, the mentors’ guidance will be essential during this time. 
+In the third week of the bonding period, it is my intention to be ready to start coding. I do not count it as a coding week, however I believe I will be ready.
+
+
+
+\subsection{Coding period (June 7 - August 16)}
+This 13 weeks period will be split as shown in the following Gantt chart (Figure 3).  More specifically:
+
+
+\textbullet\ \textbf{1st - 4th week }
+
+In the first four weeks probably the most time-consuming task will be implemented. 
+I will create the wrapper for the volesti package as described in T.1. 
+Meanwhile, I will catalogue all the useful open-cobra visual components and I will include them in this first Python interface of volesti. 
+Tests that the wrapper is operating well will be implemented. 
+A first documentation of the Python interface will also be made.
+
+\textbullet\ \textbf{5th - 7th week}
+
+In those four weeks, I am going to implement the cplex buildings; first for the case of volesti source code (C++ interface of the cplex package). 
+Tests will be implemented as well. 
+
+\textbullet\ \textbf{8th - 9th week}
+
+And then, the 2 following weeks for the case of the Python wrapper built on T.1. 
+A thorough report about the coding blocks regarding the “cplex“ building will be delivered.
+10th week
+By the time being, the GeomScale group will have added the extra sampling and rounding methods on the volesti source code. 
+Thus, this week I will build those methods based on the cplex package as well.
+
+\textbullet\ \textbf{11th - 12th week}
+
+In those two weeks, the final wrapper of the volesti Python interface will be implemented. This version will include the cplex-based methods of volesti both those that are currently included and those that are about to be added by the GeomScale group and the open-cobra visual components mentioned. 
+
+
+\textbullet\ \textbf{13th week}
+
+In the last week, the final  volesti Python interface will be applied to a series of data as described in T.4. Likewise, the cobrapy library. Their performance will be reported. Finally, a complete documentation for the volesti Python interface will be delivered.
+This time schedule is a worst-case scenario. In case that something is not going according to the plan, then the extra time that we attempt to earn from the bonding period, will come up as a backup plan.
+
+
+
+
+
+
+
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%
 % Related work  %
 %%%%%%%%%%%%%%%%%
+\section{Related work}
+
+I have been a member of the GeomScale project over the last year.
+Based on \href{https://github.com/GeomScale/gsoc2020/wiki/High-dimensional-sampling-with-applications-to-structural-biology}{an idea from the GSoC of 2020} we have been working on sampling the flux space of metabolic networks. 
+I contributed with wrapping the C++ code of \texttt{VolEsti} to build the Python interface.
+Furthermore, I implemented the MMCS method developed by the GeomScale group on metabolic networks of high dimensions \cite{chalkis2020geometric}. 
+This work was accepted in the proceedings of the \href{https://cse.buffalo.edu/socg21/accepted.html}{37th Symposium on Computational Geometry}.
 
 
 
 %%%%%%%%%%%%%%%%%
 %     Tests     %
 %%%%%%%%%%%%%%%%%
+\section{Tests}
 
 
 %%%%%%%%%%%%%%%%%
@@ -121,7 +238,7 @@
 \subsection{Programming}
 
 \begin{itemize}
-   \item Author of the \texttt{PEMA} workflow
+   \item Author of the \href{https://github.com/hariszaf/pema}{\texttt{PEMA}} workflow
    \item Very experienced in programming with scripting programming languages \\
    (Python, BigDataScript, R).
    \item Basic knowledge of C++
@@ -130,7 +247,7 @@
 \end{itemize}
 
 
-\section{Personal motivation}
+\subsection{Personal motivation}
 
 Bioinformatics play a great part in almost every aspect of modern biology.
 That is why after graduating Biology school (BSc), I focused on computer science and Bioinformatics (MSc). 
@@ -143,8 +260,8 @@ As Systems Biology approaches can benefit the most this field,
 I have spent the last 2 years working on 
 knowledge aggregation and data integration techniques as well as networks analysis are employed. 
 
-The last year, I have been working with the GeomScale group on the \href{https://github.com/GeomScale/volume_approximation}{\texttt{volestipy}} project
-and sampling on the flux space of metabolic networks \cite{chalkis2020geometric}. This work was accepted in the proceedings of the \href{https://cse.buffalo.edu/socg21/accepted.html}{37th Symposium on Computational Geometry}.
+The last year, I have been working with the GeomScale group on the \href{https://github.com/GeomScale/volume_approximation}{\texttt{\texttt{VolEsti}py}} project
+and sampling on the flux space of metabolic networks 
 
 This GSoC project would allow me to continue working with in the framework of the GeomScale project whilst building the proposed application would would benefit me the most, especially as it will allow me to extend the scopus of my PhD dissertation.
 
@@ -163,7 +280,7 @@ In their study [21], Gossart et al.  describe the research framework of such stu
 
 Coding has been a great part of my everyday routine through the recent years. 
 The different needs of the different types of analysis in biology force you to deal with a great range of computing tasks, such as choosing the proper programming language for each issue, working with High Performance Computing environments, finding ways to make your code easy-to-use, easy-to-distribute and flexible at the same time. 
-It would be both a profit and an enjoyment for me to be part of the Google Summer of Code and upgrade my so-far programming skills, particularly as volesti functions have been developed in C++, meaning that I will have to deal with new personal coding challenges. 
+It would be both a profit and an enjoyment for me to be part of the Google Summer of Code and upgrade my so-far programming skills, particularly as \texttt{VolEsti} functions have been developed in C++, meaning that I will have to deal with new personal coding challenges. 
 
 
 
