@@ -7,6 +7,10 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+# library to run Python chunks
+library(reticulate)
+
 ```
 
 ## From DNA sequences to metabolic interactions: building a pipeline to extract key metabolic processes
@@ -20,7 +24,7 @@ this is an implementation of the tests that correspond to the later.
 
 
 
-### Easy 
+### Easy test
 
 ***Question:***
 *Compile and run `volesti`. Use the R extension to visualize sampling in a polytope*
@@ -30,6 +34,9 @@ checking out to the `branch` of the [`SoCG21`](https://github.com/GeomScale/volu
 
 I installed the [dependencies](https://github.com/GeomScale/volume_approximation/tree/socg21) described there 
 to install this `volesti` version, including some extra, metabolic-networks-oriented functions.
+
+To do so, among other dependencies, a license for the [`mosek`](https://docs.mosek.com/9.2/licensing/quickstart.html#doc-licensing-quickstart)
+library was needed. 
 
 To sample on a polytope, I got an example of a cube polytope from the `R-proj/inst/extdata` directory of the repo.
 You may find this cube [here](https://github.com/GeomScale/volume_approximation/blob/develop//inst/extdata/cube_10.ext)
@@ -106,7 +113,7 @@ ggplot(walks, aes(x=x, y=y, group=random_walk, col=random_walk)) +
 ```
 
 
-### Medium
+### Medium test
 
 ***Question:***
 *Use the R extension to sample on the flux space of the metabolic network of E.coli*
@@ -122,20 +129,92 @@ download.file(data_url, e_coli_core)
 ```
 
 Now, a single `volesti` function will sample on the flux space of the metabolic network. 
+We will ask for 1,000 sample points. 
 
-```{r read_mat}
-
-## request effectiveness n = 1000 and sample steady states
+```{r sample}
 result_list = generate_steady_states(e_coli_core, n = 1000, Recon2D_v04 = FALSE, Recon3D_301 = FALSE)
+```
 
+And we keep all flux values of a single reaction to plot its distribution. 
+
+```{r plot_a_flux_distribution}
+h1 = hist(result_list$steady_states[12,], 
+     main="Acetate kinase", 
+     xlab="Flux (mmol/gDW/h)", 
+     border="black", 
+     col="red", 
+     xlim=c(min(result_list$steady_states[12,]), max(result_list$steady_states[12,])), 
+     las=1, 
+     breaks=50, 
+     prob = TRUE)
 ```
 
 
 
 
+### Hard test
+
+***Question:*** 
+*Move the sample points returned from the Medium test in Python and plot the distributions of two co-ordinates (reaction fluxes).*
+
+This "hard" test is actually the easy part.
+
+We just save the flux distribution of the previous test and of another one to a text file. 
+
+```{r save_fluxes_to_file}
+flux_1 = result_list$steady_states[12,]
+flux_2 = result_list$steady_states[21,]
+fluxes = rbind(flux_1, flux_2)
+output_file = "/home/haris/Desktop/fluxes.tsv"
+write.table(fluxes, output_file, append = FALSE, sep = "\t", dec = ".",
+            row.names = TRUE, col.names = TRUE)
+```
+
+Now that we have 2 
 
 
 
+```{python import_libs}
+print("Hello (Python) friend!")
+import sys
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+```
 
 
+```{python input_data}
+
+df = pd.read_csv("/home/haris/Desktop/fluxes.tsv", sep='\t')
+data = df.values
+```
+```{python plot}
+
+fig = plt.figure(figsize=(10, 10))
+ax = fig.add_subplot(111,projection='3d')
+ax.title.set_text('Distribution of Sampled Points')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+x, y = data[0], data[1]
+nymber_of_bins = 100
+minx = np.min(x)
+miny = np.min(y)
+maxx = np.max(x)
+maxy = np.max(y)
+hist, xedges, yedges = np.histogram2d(x, y, bins=nymber_of_bins, 
+                                      range=[[minx, maxx], [miny, maxy]])
+
+xpos, ypos = np.meshgrid(xedges[:-1] + 0.25, yedges[:-1] + 0.25, indexing="ij")
+xpos = xpos.ravel()
+ypos = ypos.ravel()
+zpos = 0
+
+dx = dy = 0.5 * np.ones_like(zpos)
+dz = hist.ravel()
+
+ax.bar3d(xpos, ypos, zpos, dx, dy, dz, zsort='average')
+
+plt.show()
+```
 
