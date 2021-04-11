@@ -1,0 +1,220 @@
+---
+title: "GSoC2021: tests"
+author: "Haris Zafeiropoulos"
+date: "4/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# library to run Python chunks
+library(reticulate)
+
+```
+
+## From DNA sequences to metabolic interactions: building a pipeline to extract key metabolic processes
+
+Based on previous work, I propose a Google Summer of Code project in the framework of the [GeomScale group]()
+that is not listed in their [table of proposed coding projects](https://github.com/GeomScale/gsoc2021/wiki/table-of-proposed-coding-projects).
+
+However, as it has a lot in common with the 
+[Inferring microbial interactions](https://github.com/GeomScale/gsoc2021/wiki/Inferring-microbial-interactions) project,
+this is an implementation of the tests that correspond to the later. 
+
+
+
+### Easy test
+
+***Question:***
+*Compile and run `volesti`. Use the R extension to visualize sampling in a polytope*
+
+After cloning the [`volume_approximation`](https://github.com/GeomScale/volume_approximation/) repository and 
+checking out to the `branch` of the [`SoCG21`](https://github.com/GeomScale/volume_approximation/tree/socg21)
+
+I installed the [dependencies](https://github.com/GeomScale/volume_approximation/tree/socg21) described there 
+to install this `volesti` version, including some extra, metabolic-networks-oriented functions.
+
+To do so, among other dependencies, a license for the [`mosek`](https://docs.mosek.com/9.2/licensing/quickstart.html#doc-licensing-quickstart)
+library was needed. 
+
+To sample on a polytope, I got an example of a cube polytope from the `R-proj/inst/extdata` directory of the repo.
+You may find this cube [here](https://github.com/GeomScale/volume_approximation/blob/develop//inst/extdata/cube_10.ext)
+
+```{r cars}
+library(volesti)
+library(ggplot2)
+setwd("/home/haris/Documents/coding/github_repos/volume_approximation/R-proj/")
+polytope = file_to_polytope("examples/cube10.ine")
+```
+
+As I chose an `.ine` file, I got a H-polytope.
+I then checked the dimension of the cube polytope. 
+
+```{r dimension}
+polytope$dimension
+```
+
+Then I sampled on the cube polytope with various random walks supported by the `volesti` library, 
+asking for 10,000 points in every case. 
+
+```{r sampling_on_cube}
+# 'CDHR' for Coordinate Directions Hit-and-Run
+points_cdhr =  sample_points(P = polytope, n = 10000, 
+                             distribution = list("density" = "uniform"),  random_walk = list("walk"="CDHR"))
+CDHR = data.frame(x=points_cdhr[1,], y=points_cdhr[2,])
+
+# 'RDHR' for Random Directions Hit-and-Run
+points_rdhr =  sample_points(P = polytope, n = 10000, 
+                             distribution = list("density" = "uniform"),  random_walk = list("walk"="RDHR"))
+RDHR = data.frame(x=points_rdhr[1,], y=points_rdhr[2,])
+
+# BiW' for Billiard walk
+points_biw =  sample_points(P = polytope, n = 10000, 
+                            distribution = list("density" = "uniform"),  random_walk = list("walk"="BiW"))
+BiW = data.frame(x=points_biw[1,], y=points_biw[2,])
+
+# BaW' for Ball Walk
+points_baw =  sample_points(P = polytope, n = 10000, 
+                            distribution = list("density" = "uniform"),  random_walk = list("walk"="BaW"))
+BaW = data.frame(x=points_baw[1,], y=points_baw[2,])
+
+# 'dikin' for dikin walk
+points_dikin =  sample_points(P = polytope, n = 10000, 
+                            distribution = list("density" = "uniform"),  random_walk = list("walk"="dikin"))
+dikin = data.frame(x=points_dikin[1,], y=points_dikin[2,])
+
+# 'vaidya' for vaidya walk, 
+points_vaidya =  sample_points(P = polytope, n = 10000, 
+                            distribution = list("density" = "uniform"),  random_walk = list("walk"="vaidya"))
+vaidya = data.frame(x=points_vaidya[1,], y=points_vaidya[2,])
+
+# 'john' for john walk
+points_john =  sample_points(P = polytope, n = 10000, 
+                            distribution = list("density" = "uniform"),  random_walk = list("walk"="john"))
+john = data.frame(x=points_john[1,], y=points_john[2,])
+
+# 'BCDHR' boundary sampling by keeping the extreme points of CDHR 
+points_BCDHR =  sample_points(P = polytope, n = 10000, 
+                            distribution = list("density" = "uniform"),  random_walk = list("walk"="BCDHR"))
+BCDHR = data.frame(x=points_BCDHR[1,], y=points_BCDHR[2,])
+
+```
+
+
+And then make a plot to see the distribution of each of these walks! 
+
+```{r plot_samples, echo = FALSE}
+walks = rbind(CDHR, RDHR, BiW, BaW, dikin, vaidya, john, BCDHR)
+walks$random_walk = c(rep("CDHR",10000),rep("RDHR",10000), rep("BiW", 10000), rep("BaW",10000), rep("dikin",10000), rep("vaidya",10000), rep("john",10000), rep("BCDHR", 10000))
+
+ggplot(walks, aes(x=x, y=y, group=random_walk, col=random_walk)) +
+  geom_point() + labs(title = "uniform sampling on cube_10.ine file / H-polytope")
+```
+
+
+### Medium test
+
+***Question:***
+*Use the R extension to sample on the flux space of the metabolic network of E.coli*
+
+To sample on the flux space of *E.coli*'s metabolic network, we first need to get such a network! :-) 
+Metabolic networks can be usually found as a `.json` or/and a `.xml` or/and a `.mat` file. 
+We will stick with the `.mat` format. 
+
+```{r e_coli_met_net}
+data_url = "http://bigg.ucsd.edu/static/models/e_coli_core.mat"
+e_coli_core = "/home/haris/Documents/projects/GeomScale/gsoc2021/e_coli_core.mat"
+download.file(data_url, e_coli_core)
+```
+
+Now, a single `volesti` function will sample on the flux space of the metabolic network. 
+We will ask for 1,000 sample points. 
+
+```{r sample}
+result_list = generate_steady_states(e_coli_core, n = 1000, Recon2D_v04 = FALSE, Recon3D_301 = FALSE)
+```
+
+And we keep all flux values of a single reaction to plot its distribution. 
+
+```{r plot_a_flux_distribution}
+h1 = hist(result_list$steady_states[12,], 
+     main="Acetate kinase", 
+     xlab="Flux (mmol/gDW/h)", 
+     border="black", 
+     col="red", 
+     xlim=c(min(result_list$steady_states[12,]), max(result_list$steady_states[12,])), 
+     las=1, 
+     breaks=50, 
+     prob = TRUE)
+```
+
+
+
+
+### Hard test
+
+***Question:*** 
+*Move the sample points returned from the Medium test in Python and plot the distributions of two co-ordinates (reaction fluxes).*
+
+This "hard" test is actually the easy part.
+
+We just save the flux distribution of the previous test and of another one to a text file. 
+
+```{r save_fluxes_to_file}
+flux_1 = result_list$steady_states[12,]
+flux_2 = result_list$steady_states[21,]
+fluxes = rbind(flux_1, flux_2)
+output_file = "/home/haris/Desktop/fluxes.tsv"
+write.table(fluxes, output_file, append = FALSE, sep = "\t", dec = ".",
+            row.names = TRUE, col.names = TRUE)
+```
+
+Now that we have 2 
+
+
+
+```{python import_libs}
+print("Hello (Python) friend!")
+import sys
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from mpl_toolkits.mplot3d import Axes3D
+```
+
+
+```{python input_data}
+
+df = pd.read_csv("/home/haris/Desktop/fluxes.tsv", sep='\t')
+data = df.values
+```
+```{python plot}
+
+fig = plt.figure(figsize=(10, 10))
+ax = fig.add_subplot(111,projection='3d')
+ax.title.set_text('Distribution of Sampled Points')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+x, y = data[0], data[1]
+nymber_of_bins = 100
+minx = np.min(x)
+miny = np.min(y)
+maxx = np.max(x)
+maxy = np.max(y)
+hist, xedges, yedges = np.histogram2d(x, y, bins=nymber_of_bins, 
+                                      range=[[minx, maxx], [miny, maxy]])
+
+xpos, ypos = np.meshgrid(xedges[:-1] + 0.25, yedges[:-1] + 0.25, indexing="ij")
+xpos = xpos.ravel()
+ypos = ypos.ravel()
+zpos = 0
+
+dx = dy = 0.5 * np.ones_like(zpos)
+dz = hist.ravel()
+
+ax.bar3d(xpos, ypos, zpos, dx, dy, dz, zsort='average')
+
+plt.show()
+```
+

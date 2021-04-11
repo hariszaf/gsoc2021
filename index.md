@@ -1,41 +1,26 @@
-## Welcome to GitHub Pages
+## From DNA sequences to metabolic interactions: 
+## building a pipeline to extract key metabolic processes
 
-You can use the [editor on GitHub](https://github.com/hariszaf/gsoc2021/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+A proposal from Haris Zafeiropoulos
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Overview of the project
+In constraint-based metabolic modelling, physical and biochemical constraints define a polyhedral convex set of feasible flux vectors. Uniform sampling of this set provides an unbiased characterization of the metabolic capabilities of a biochemical network. The corresponding polyhedra typically lie in hundreds or thousands of dimensions. Fast convergence to the stationary uniform distribution is crucial from a computational point of view, to enable reliable and tractable sampling of genome-scale biochemical networks.
 
-### Markdown
+Tests
+The mentors asks for the students to do one or more of the following tests before contacting them.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Here are the aforementioned tests.
 
-```markdown
-Syntax highlighted code block
+Solutions of tests
+Click on each task to see the relevant answers.
 
-# Header 1
-## Header 2
-### Header 3
+**Easy:**
+Compile and run VolEsti. Use the R extension to visualize sampling in a polytope.
 
-- Bulleted
-- List
+**Medium:**
+Import the e.coli dataset from bigg and create a matrix in R
 
-1. Numbered
-2. List
+**Hard:**
+Support lower dimensional polytopes in volesti and use existing methods to sample from them
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hariszaf/gsoc2021/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
-
-
-
-My [tests](tests.html)
+You may find my tests [here](tests.html).
