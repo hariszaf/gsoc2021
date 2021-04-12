@@ -143,41 +143,35 @@ some new functions in the framework of the
 
 
 
-
-
 \begin{figure}[h]
    \label{methods}
       \centering
-      \includegraphics[width=0.8\textwidth]{proposal_steps.png}
+      \includegraphics[width=0.8\textwidth]{proposal_fig.png}
       \caption{Project's workflow. This proposal consists of 4 major steps combining third party tools implementation and development of new code in the framework of the \texttt{dingo} Python library.}
-   \end{figure}
+\end{figure}
 
 
 
+Global repositories including thousands of reference microbial genomes such as 
+the Genome Taxonomy Database (GTDB) will be exploited \cite{parks2018standardized, parks2020complete}. 
+% Here is a post on how to get the genomes of GTDB
+% https://forum.gtdb.ecogenomic.org/t/194-600-genomes-r95-download/56 
 
-In addition, uniform sampling in the flux spaces of all paired associations will strengthen the actual associations, demonstrating robustness on exchange/competition for metabolites. 
+Automatic genome scale metabolic networks reconstruction tools, 
+such as AuReMe \cite{aite2018traceability} and CarveMe \cite{machado2018fast}, have been recently developed. Such tools will be implemented to get the corresponding GEMs 
+for the genomes retrieved and/or for the genomed provided by the user. 
 
+The \href{https://smetana.readthedocs.io/en/latest/algorithms.html}{SMETANA} package,
+is a set of algorithms looking for possible cross-feeding interactions
+between the species of the microbial community under study \cite{zelezniak2015metabolic}.
+Such algorithms will be implemented in the GEMs built from the original genomes 
+gathered or/and provided by the user, to return key metabolites. 
 
-Automatic genome scale metabolic networks reconstruction tools, such as AuReMe (18) and CarveMe (19), have been recently developed. Once such a metabolic network exists, metabolic flux sampling can be used to study its global features, allowing the study of properties of certain components of the whole network, and deduce significant biological insights (20,21).
-microbetag will search for potential matches between both taxa in each of the network edges and the 30.000 genomes available in GTDB. For those pairs of taxa that a match is found, microbetag will implement genome-scale metabolic reconstruction tools to build their metabolic networks. 
-
-
-Aim of this project is to get the flux distributions of the processes related to the pathways both taxa of an association are involved with. 
-
-Then, microbetag will check whether the taxa of the association under study exchange or compete for metabolites in a robust way.
-
-
-
-
-
-
-I suggest to implement a pipelenine 
-
-1. get/provide a pair of .fasta files (genomes)
-2. run \texttt{AuReMe} or \texttt{CarveMe} to get metabolic networks
-3. 
-
-
+Flux randomized sampling using the MMCS algorithm of the \texttt{dingo} Python library 
+will be implemented to evaluate the effect of the metabolites returned from the previous steps. 
+To this end, new functions will be developed in the framework of the \texttt{dingo} library
+to check the response of the biomass function \cite{feist2010biomass} or the function of maximization of ATP per unit flux \cite{schuetz2007systematic} in alterations regarding the corresponding metabolites. 
+Furthermore, functions will be developed to perform sampling in the flux spaces of all the paired associations between the various species, to strengthen these associations, depending on whether they respond robustly on exchange/competition for metabolites. 
 
 
 %%%%%%%%%%%%%%%%%
@@ -185,12 +179,12 @@ I suggest to implement a pipelenine
 %%%%%%%%%%%%%%%%%
 \subsection{Benefits to the Community}
 
-Benefit to the \texttt{volesti} as an open source library
+The proposed project will benefit the most the \texttt{dingo} Python library 
+as an open source code project, as it will provide a thorough use case in a big-data scale and 
+will also develop further functions for the analysis of microbial communities. 
 
-Benefit to the biologist 
+Furthermore, it will be essential for biologists studying microbial interactions in all the different biological fields, from ecosystem functioning to precision medicine. 
 
-
-Build synthetic communities, cultivate the uncultivated. 
 
 %%%%%%%%%%%%%%%%%
 % Deliverables  %
