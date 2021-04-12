@@ -3,7 +3,10 @@
 A proposal by [Haris Zafeiropoulos](https://hariszaf.github.io/)
 
 ### Overview of the project
-In constraint-based metabolic modelling, physical and biochemical constraints define a polyhedral convex set of feasible flux vectors. Uniform sampling of this set provides an unbiased characterization of the metabolic capabilities of a biochemical network. The corresponding polyhedra typically lie in hundreds or thousands of dimensions. Fast convergence to the stationary uniform distribution is crucial from a computational point of view, to enable reliable and tractable sampling of genome-scale biochemical networks.
+In constraint-based metabolic modelling, physical and biochemical constraints define a polyhedral convex set of feasible flux vectors. 
+Uniform sampling of this set provides an unbiased characterization of the metabolic capabilities of a biochemical network. 
+The corresponding polyhedra typically lie in hundreds or thousands of dimensions. 
+Fast convergence to the stationary uniform distribution is crucial from a computational point of view, to enable reliable and tractable sampling of genome-scale biochemical networks.
 
 ### Tests
 This proposal is not among the ideas listed from the [GeomScale](https://geomscale.github.io/) group. 
