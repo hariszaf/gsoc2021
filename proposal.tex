@@ -52,6 +52,29 @@
 
 \section{Synopsis}
 
+Twenty years after Covert W.Covert, Bernhard O. Palsson and their colleagues published 
+their review on metabolic modelling of microbial strains \cite{covert2001metabolic}, 
+the value of this method has been well established. 
+
+From the beginning, metabolic modeling has been interwoven with constraing-based methods \cite{palsson2015systems}. The value of randomized sampling in the framework of metabolic modeling has been proved itself over the years \cite{schellenberger2009use, herrmann2019flux}.
+
+High Throughput Sequencing technologies have allowed process in the genetic information (DNA) in a cost-efficient and easy way, especially for microbial species as their genome is only but a few hundreds of genes long.
+
+Once the complete genome of a species is obtained, the complete reconstruction of the metabolic network of the species is enabled, called genome-scale metabolic models (GEMs) \cite{gu2019current}.
+
+Such models for all the species present in a microbial community, allows the study 
+of metabolic interactions, thus an insight for the actual microbial intaractions \cite{ponomarova2015metabolic}. 
+
+Aim of this project is to integrate the produced data and knowledge of these twenty 
+(and more) years and make use of the randomized flux sampling method 
+to evaluate the metabolic interactions retrieved. 
+To this end, thousands of publicly available reference microbial genomes will be 
+selected, and their automatic metabolic network reconstructions will be implemented. 
+Based on these models, cross-feeding interactions algorithms will be performed for groups
+of species to extract key metabolic processes. 
+New functions, implementing the recently developed Multiphase Monte Carlo Sampling (MMCS) approach \cite{chalkis2020geometric} in the framework  of the \texttt{dingo} library, will 
+make use of the randomized flux sampling concept to evaluate the processes retrieved.
+
 
 
 %%%%%%%%%%%%%%%%%
@@ -59,8 +82,7 @@
 %%%%%%%%%%%%%%%%%
 
 \section{The Project}
-
-
+\subsection{Background}
 Microbial communities populate most environments on earth; from the seafloor to the
 human gut, they literay live everywhere \cite{reise2009item}.
 The play a critical role in shaping the environment as we know it.  
@@ -81,76 +103,55 @@ Metabolism is a network of the metabolic pathways that occur in an organism; thu
 Using the stoichiometry of each reaction, which is always the same in the various species,
 we convert the metabolic network of an organism into a mathematical model \cite{palsson2015systems}.
 High Throughput Sequencing has made access to the complete genomic information of an organism rather easy. 
-However, building the complete metbolic network of a species is not that trivial yet \cite{thiele2010protocol}.
+However, building the complete metbolic network of a species is not that trivial yet 
+\cite{thiele2010protocol}.
 However, over the last few years, automatic reconstruction approaches for building genome-scale metabolic models \cite{machado2018fast} of relatively high quality have been developed.
 
-
-The study of metabolic dependencies to infer interspecies microbial interactions has been estrablished the last years \cite{zelezniak2015metabolic}.
-Constrained-based modelling approaches, suchas as Flux Balance Aanalysis and flux randomized sampling, have enabled the investigation of the properties of the possible steady states of a metabolic network,
-end up with essential insights on metabolism at every level [10,11].
+The study of metabolic dependencies to infer interspecies microbial interactions has been estrablished the last years (Fig.~\ref{interacting_community}), for more see \cite{zelezniak2015metabolic}.
 
 
-The aim of this project is to 
+\begin{figure}[h]
+\label{interacting_community}
+   \centering
+   \includegraphics[width=0.8\textwidth]{interacting_community.png}
+   \caption{Representation of a microbial community of 3 interacting species. 
+   The Metabolic Interaction Potential metric (MIP) quatifies the propensity of a community to exhange metabolites. The figure is part of Fig. 3. at \cite{zelezniak2015metabolic}}
+\end{figure}
 
 
+Constrained-based modelling approaches, such as as Flux Balance Aanalysis and flux randomized sampling, have enabled the investigation of the properties of the possible steady states of a metabolic network,
+end up with essential insights on metabolism at every level \cite{muller2018using, vieira2019comparison}.
+Microbial communities harbor metabolically interdependent cooperative groups.
+As a matter of fact, such groups play a key role for species co-occurrence \cite{zelezniak2015metabolic}.
 
 
-I propose the building of a pipeline to 
-
-
-and thus climate \cite{arrigo2005marine}
- climate [5, 6]
-
-
-Over the last 20 years, 
-
-
-
-Their composition is thought to be largely shaped by interspecies competition for the
-available resources, but cooperative interactions, such as metabolite
-exchanges, have also been implicated in community assembly. 
-
-The prevalence of metabolic interactions in microbial communities, 
-however, has remained largely unknown. Here, we systematically survey,
-by using a genome-scale metabolic modeling approach, the extent
-of resource competition and metabolic exchanges in over 800
-communities. We find that, despite marked resource competition
-at the level of whole assemblies, microbial communities harbor
-metabolically interdependent groups that recur across diverse habitats. By enumerating flux-balanced metabolic exchanges in these
-co-occurring subcommunities we also predict the likely exchanged
-metabolites, such as amino acids and sugars, that can promote group
-survival under nutritionally challenging conditions. Our results
-highlight metabolic dependencies as a major driver of species
-co-occurrence and hint at cooperative groups as recurring modules
-of microbial community architecture.
-
-
-Although metabolic interactions have long been implicated in
-the assembly of microbial communities, their general prevalence has remained largely unknown
-
-Our results highlight metabolic dependencies as a major driver of species
-co-occurrence \cite{zelezniak2015metabolic}.
-
-
-
+The aim of this project is to bring together 
+data (reference microbial genomes), 
+automatic genome scale metabolic networks reconstruction tools,
+cross-feeding interactions algorithms 
+and flux randomized sampling.
+This way, we will enable the evaluatation of the 
+effect of each of the predicted metabolic interactions, 
+to the various species of the community. 
 
 
 \subsection{Methodology}
 
+This project will make use of third party software tools and will also develop 
+some new functions in the framework of the 
+\href{https://github.com/GeomScale/dingo/}{\texttt{dingo}} project. 
 
-Microbial interactions play a fundamental role in deciphering the underlying mechanisms that govern ecosystem functioning.
-Metabolic interactions allow to determine such interactions. 
-There are several ways of identifying metabolic interactions. 
-You can look at 
-1. pathway complementarity and overlap, 
-but you could also look at 
-2. seed nodes, 
-as in NetCooperate and NetCmpt (Borenstein and Freilich labs) 
-and also at 
-3. metabolite exchanges predicted by metabolic modeling 
-(which you plan to do as well). 
 
-Metabolic pathway complementarity between the species (nodes) of each association (edge) of a network will support the identification of cooperative potential.
+
+
+
+\begin{figure}[h]
+   \label{methods}
+      \centering
+      \includegraphics[width=0.8\textwidth]{proposal_steps.png}
+      \caption{Project's workflow. This proposal consists of 4 major steps combining third party tools implementation and development of new code in the framework of the \texttt{dingo} Python library.}
+   \end{figure}
+
 
 
 
