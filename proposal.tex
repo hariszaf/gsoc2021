@@ -136,7 +136,7 @@ to the various species of the community.
 
 
 \subsection{Methodology}
-
+\label{methodology}
 This project will make use of third party software tools and will also develop 
 some new functions in the framework of the 
 \href{https://github.com/GeomScale/dingo/}{\texttt{dingo}} project. 
@@ -190,75 +190,110 @@ Furthermore, it will be essential for biologists studying microbial interactions
 % Deliverables  %
 %%%%%%%%%%%%%%%%%
 \section{Deliverables}
+\subsection{Overview}
+The tasks of this project will be split in the two main periods of the project; i.e. the Community Bonding period between the 17th of May to the 7th of June (~3 weeks) and the Coding period between the 7th of June and the 16th of August (~10 weeks). 
+At the end of the coding period, all the implementations described in the Deliverables described above, will have been completed. 
 
-
-The tasks of this project will be split in the two main periods of the project; i.e. the Community Bonding period between April 27 and May 18 (~3 weeks) and the Coding period between May 18 and August (~10 weeks). 
-At the end of the coding period, all the implementations described in the Tasks chapter will have been completed. 
-
-\texttt{VolEsti} provides a great basis for the implementation of this project. 
+The \texttt{dingo} library provides a great basis for the implementation of this project. 
 Therefore, a limited amount of time is needed  to set up all the necessary coding environments. 
-A number of extra rounding algorithms will be added on the \texttt{VolEsti} package in the next few weeks; thus, working with members of the \texttt{VolEsti} group would allow us for a simultaneous  development of the source code and the interface, without unexpected delays. That said, the coding tasks could start before the bonding period is over. 
-Furthermore, a blog will be created to report the project’s progress periodically and a thorough documentation for the \texttt{VolEsti} Python interface will be delivered. The \texttt{VolEsti} package is under the LGPL-3 license, while the cobrapy package is under the GPL and cobra-toolbox under the GNU General Public License version 3.0; all open-source. Thus, I intend to give the  \texttt{VolEsti} Python interface the LGPL-3 license too. 
+As I have been involved with the GeomScale group and the \texttt{dingo} library for over a year, it will not need time to get used to the group's working framework.
+In addition, the proposed subject has been discussed and thorough study of the 
+scientific issues that might occur, will be addressed before the bonding period starts.
+
+That said, the coding tasks could start before the bonding period is over. 
+Furthermore, a blog will be created to report the project’s progress periodically and a thorough documentation for the \texttt{dingo} Python library will be delivered
+as well as a repository with the models built.
+
+The \texttt{dingo} library is under the LGPL-3 license. 
+However, as the workflow will make use of third-party tools separate licenses will apply.
 
 
 
 \subsection{Bonding period (May 17 - June 7)}
-During the bonding period everything that I need to know regarding the implementation of T1 will be fully covered. 
-Thus, the source code of VolEsti will be thoroughly studied and a step-by-step guide for building the Python interface will be delivered by the end of the second week of the bonding period. 
-In its last week, everything that might be needed to be able to start coding by the end of the bonding period, will be taken care of.
-Thus, I will build a branch of the current VolEsti project at my GitHub repository [18] and a blog to report my progress periodically will be also created in my web page*. 
-The first two weeks will require a strong effort from me in comprehending the architecture of the VolEsti source code. 
-To address this, the mentors’ guidance will be essential during this time. 
-In the third week of the bonding period, it is my intention to be ready to start coding. I do not count it as a coding week, however I believe I will be ready.
+Main milestone of the bonding period will be to communicate with biologists 
+to address and confirm all the scientific-oriented issues that might occur. 
+A group of molecular ecologists have already knowledge of the project and I will be in 
+contact with them even before bonding period starts. 
+
+The first two weeks will require a strong effort from me 
+in designing, the \texttt{dingo} functions as well as the setup of
+the repository for the models that will be about to build and 
+the download/storage of their corresponding genomes. 
+The mentors’ guidance will be essential during this time. 
+
+In the third week of the bonding period, it is my intention to be ready to start coding. 
+I do not count it as a coding week, however I believe I will be ready.
+
+Furthermore, I will build a \texttt{git} branch from the \texttt{dingo} GitHub repository
+and a blog to report my progress periodically.
+
 
 
 
 \subsection{Coding period (June 7 - August 16)}
-This 13 weeks period will be split as shown in the following Gantt chart (Figure 3).  More specifically:
+
+This 10 weeks period will be split in the following time windows, each of which corresponds to a certain milestone: 
 
 
-\textbullet\ \textbf{1st - 4th week }
+\textbullet\ \textbf{Weeks: \#1 and \#2}
+% leave next line empty on purpose
 
-In the first four weeks probably the most time-consuming task will be implemented. 
-I will create the wrapper for the volesti package as described in T.1. 
-Meanwhile, I will catalogue all the useful open-cobra visual components and I will include them in this first Python interface of volesti. 
-Tests that the wrapper is operating well will be implemented. 
-A first documentation of the Python interface will also be made.
+In the first 2 weeks, the repository where the genomes and the models will be stored will be built, Fig.~\ref{methods} box 1. 
+In addition, the more than 190,000 genomes from the GTDB will be downloaded. 
+A deamon for getting new or updated genomes will be also set.
+A first documentation of the repository and how to access it will be delivered.
 
-\textbullet\ \textbf{5th - 7th week}
+\textbullet\ \textbf{Week: \#3}
+% leave next line empty on purpose
 
-In those four weeks, I am going to implement the cplex buildings; first for the case of volesti source code (C++ interface of the cplex package). 
-Tests will be implemented as well. 
+In this week, the two software tools mentioned in the~\pageref{methodology} section for automatic GEM reconstruction, will be thoroughly tested and it will be decided which 
+will be used, Fig.~\ref{methods} box 2. 
+GEMs then will be built and stored. 
+Format-oriented issues will be also addressed.  
+The models built during this week will be available via the blog of the project as well. 
 
-\textbullet\ \textbf{8th - 9th week}
+\textbullet\ \textbf{Weeks: \#4 to \#7}
+% leave next line empty on purpose
 
-And then, the 2 following weeks for the case of the Python wrapper built on T.1. 
-A thorough report about the coding blocks regarding the “cplex“ building will be delivered.
-10th week
-By the time being, the GeomScale group will have added the extra sampling and rounding methods on the volesti source code. 
-Thus, this week I will build those methods based on the cplex package as well.
-
-\textbullet\ \textbf{11th - 12th week}
-
-In those two weeks, the final wrapper of the volesti Python interface will be implemented. This version will include the cplex-based methods of volesti both those that are currently included and those that are about to be added by the GeomScale group and the open-cobra visual components mentioned. 
-
-
-\textbullet\ \textbf{13th week}
-
-In the last week, the final  volesti Python interface will be applied to a series of data as described in T.4. Likewise, the cobrapy library. Their performance will be reported. Finally, a complete documentation for the volesti Python interface will be delivered.
-This time schedule is a worst-case scenario. In case that something is not going according to the plan, then the extra time that we attempt to earn from the bonding period, will come up as a backup plan.
+During this period, the SMETANA algorithms will be implmemented for all the models built by that time. 
+Thourough examination of the output will be performed Fig.~\ref{methods} box 3. 
+Once a small number of successful runs of the SMETANA algorithms are completed, I 
+will start developing the \texttt{dingo} functions for the evaluation of the metabolities returned, Fig.~\ref{methods} box 4. 
+As this will be the most complicated task, both from the coding and the biology point of view, 
+extensive communication both with the mentors of the project and biologists will be held 
+to its fine completion. 
+A short report with the process of the project during this period will be delivered in the project's blog.
 
 
+\textbullet\ \textbf{Weeks: \#8 and \#9}
+% leave next line empty on purpose
+
+In those two weeks, \texttt{dingo} functions for inferring microbial interactions 
+in pairs of GEMs will be developed, Fig.~\ref{methods} box 5. 
+Just like the previous milestone, this part will be developed side-by-side with 
+biologists ensuring that the new functions developed, provide valid outcome. 
+As this part is rather scientific, if further developments is needed, I will discuss this 
+with the mentors to continue working on that even after the project is complete. 
+By the end of this period, I will have a report delivered in the project's blog.
 
 
+\textbullet\ \textbf{Week: \#10}
+% leave next line empty on purpose
+
+During this last week, tests for the complete pipeline will be held. 
+Thourough documentation for the pipeline will be provided. 
+I will make a Pull Request, so my branch to merge with the \texttt{main} branch of the \texttt{dingo} library. 
+I will finally submit the final evaluation of the GSoC project.
 
 
+\rule{\textwidth}{0.4pt}
 
+\textbf{Comment:} The above time schedule is a worst-case schedule. 
+However, if the coding exceeds my present expectations I will discuss with mentors new additions and implementations.
 
+There are not schedule conflicts during the summer. 
 
-
-
-
+\rule{\textwidth}{0.5pt}
 
 %%%%%%%%%%%%%%%%%
 % Related work  %
@@ -336,35 +371,39 @@ and the correspondig code on its correspondig \href{https://github.com/hariszaf/
 \subsection{Personal motivation}
 
 Bioinformatics play a great part in almost every aspect of modern biology.
+Metabolic interactions \cite{cai2020predicting} is now the next big thing in systems biology. 
 That is why after graduating Biology school (BSc), I focused on computer science and Bioinformatics (MSc). 
-I am now quite experienced with a series of scripting programming languages ( Python, BigDataScript, R) and with container-based technologies (Docker, Singularity).  
-PEMA \cite{zafeiropoulos2020pema}, a pipeline for the analysis of metabarcoding data, was my first coding project; PEMA has now been published and selected from \href{https://www.lifewatch.eu/}{LifeWatch - ERIC} a European Researh Infrustructure, to support .
-\href{http://prego.hcmr.gr/}{PREGO} and \href{https://github.com/hariszaf/darn/}{DARN} are ongoing bioinformatics projects in the framework of my PhD.
+I am now quite experienced with a series of scripting programming languages (Python, BigDataScript, R) and with container-based technologies (Docker, Singularity).  
+% PEMA \cite{zafeiropoulos2020pema}, a pipeline for the analysis of metabarcoding data, was my first coding project; PEMA has now been published and selected from \href{https://www.lifewatch.eu/}{LifeWatch - ERIC} a European Researh Infrustructure, to support .
+% \href{http://prego.hcmr.gr/}{PREGO} and \href{https://github.com/hariszaf/darn/}{DARN} are ongoing bioinformatics projects in the framework of my PhD.
+
 
 My research interests focus on ecology and ecosystem functioning at the microbial dimension.
 As Systems Biology approaches can benefit the most this field, 
 I have spent the last 2 years working on 
 knowledge aggregation and data integration techniques as well as networks analysis are employed. 
-
-The last year, I have been working with the GeomScale group on the \href{https://github.com/GeomScale/volume_approximation}{\texttt{\texttt{VolEsti}py}} project
-and sampling on the flux space of metabolic networks 
-
-This GSoC project would allow me to continue working with in the framework of the GeomScale project whilst building the proposed application would would benefit me the most, especially as it will allow me to extend the scopus of my PhD dissertation.
-
 Metabolic interactions \cite{cai2020predicting} is now the next big thing in systems biology. 
-In such a study, the changing phenotype of an ecosystem, as derived by the combination of phenotypes of all the ecosystem's individual entities, under different scenarios of constraint values could be predicted. 
-The impact of such studies would be more than significant, especially on a time when nature suffers the most, mostly due to anthropogenic activities. 
-Indicatively possible datasets such a study could be conducted on: 
-“Impact of exogenous nitrogen on the cyanobacterial abundance and community in oil-contaminated sediment: A microcosm study” from Wang et al. [19] 
-(peer-reviewed, no public data, email request)
-“Discovery of functional gene markers of bacteria for monitoring hydrocarbon pollution in the marine environment - a metatranscriptomics approach” from Knapik et al. [20]
-(not peer-reviewed, data not published yet)
-In their study [21], Gossart et al.  describe the research framework of such studies we suggest to apply the aforementioned methods .
+Over the last year, I have been working with the GeomScale group on the \href{https://github.com/GeomScale/volume_approximation}{\texttt{VolEstipy}} project.
+Developing algorithms for sampling on the flux space of metabolic networks have 
+helped me in getting a more holistic point of view of the potentials of sampling in the study of metabolic networks. 
+
+This GSoC project would allow me to continue working with the GeomScale group, 
+whilst building the proposed application would benefit me the most, 
+especially as it will allow me to extend the scopus of my PhD dissertation.
+
+% In such a study, the changing phenotype of an ecosystem, as derived by the combination of phenotypes of all the ecosystem's individual entities, under different scenarios of constraint values could be predicted. 
+% The impact of such studies would be more than significant, especially on a time when nature suffers the most, mostly due to anthropogenic activities. 
+% Indicatively possible datasets such a study could be conducted on: 
+% “Impact of exogenous nitrogen on the cyanobacterial abundance and community in oil-contaminated sediment: A microcosm study” from Wang et al. [19] 
+% (peer-reviewed, no public data, email request)
+% “Discovery of functional gene markers of bacteria for monitoring hydrocarbon pollution in the marine environment - a metatranscriptomics approach” from Knapik et al. [20]
+% (not peer-reviewed, data not published yet)
+% In their study [21], Gossart et al.  describe the research framework of such studies we suggest to apply the aforementioned methods .
 
 
-Coding has been a great part of my everyday routine through the recent years. 
-The different needs of the different types of analysis in biology force you to deal with a great range of computing tasks, such as choosing the proper programming language for each issue, working with High Performance Computing environments, finding ways to make your code easy-to-use, easy-to-distribute and flexible at the same time. 
-It would be both a profit and an enjoyment for me to be part of the Google Summer of Code and upgrade my so-far programming skills, particularly as \texttt{VolEsti} functions have been developed in C++, meaning that I will have to deal with new personal coding challenges. 
+% Coding has been a great part of my everyday routine through the recent years. 
+% The different needs of the different types of analysis in biology force you to deal with a great range of computing tasks, such as choosing the proper programming language for each issue, working with High Performance Computing environments, finding ways to make your code easy-to-use, easy-to-distribute and flexible at the same time. 
+% It would be both a profit and an enjoyment for me to be part of the Google Summer of Code and upgrade my so-far programming skills, particularly as \texttt{dingo} functions have been developed in C++, meaning that I will have to deal with new personal coding challenges. 
 
 
 
