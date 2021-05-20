@@ -8,6 +8,10 @@ sass:
   sass_dir: _sass
   style: compressed
 
+plugins:
+  - jekyll-target-blank
+
+
 # Resume settings
 resume_avatar:                  "true"
 resume_name:                    "GSoC2021: extracting key metabolic processes"
