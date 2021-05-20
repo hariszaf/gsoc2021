@@ -23,29 +23,28 @@ resume_contact_address:         ""
 resume_header_contact_info:     ""
 display_header_contact_info:    "false"
 
-resume_header_intro: "<p>
-  Twenty years after Covert W.Covert, Bernhard O. Palsson and their colleagues published 
-  their review on metabolic modelling of microbial strains \cite{covert2001metabolic}, 
-  the value of this method has been well established. 
+resume_header_intro: "<p>Twenty years after Covert W.Covert, Bernhard O. Palsson and their colleagues published 
+their review on metabolic modelling of microbial strains \cite{covert2001metabolic}, 
+the value of this method has been well established. 
 
-  From the beginning, metabolic modeling has been interwoven with <a href="https://doi.org/10.1016/S0968-0004(00)01754-0">constraing-based methods</a>. The value of randomized sampling in the framework of metabolic modeling has been proved itself over the years.
+From the beginning, metabolic modeling has been interwoven with <a href="https://doi.org/10.1016/S0968-0004(00)01754-0">constraing-based methods</a>. The value of randomized sampling in the framework of metabolic modeling has been proved itself over the years.
 
-  High Throughput Sequencing technologies have allowed process in the genetic information (DNA) in a cost-efficient and easy way, especially for microbial species as their genome is only but a few hundreds of genes long.
+High Throughput Sequencing technologies have allowed process in the genetic information (DNA) in a cost-efficient and easy way, especially for microbial species as their genome is only but a few hundreds of genes long.
 
-  Once the complete genome of a species is obtained, the complete reconstruction of the metabolic network of the species is enabled, called genome-scale metabolic models (GEMs).
+Once the complete genome of a species is obtained, the complete reconstruction of the metabolic network of the species is enabled, called genome-scale metabolic models (GEMs).
 
-  Such models for all the species present in a microbial community, allows the study 
-  of metabolic interactions, thus an insight for the actual microbial intaractions. 
+Such models for all the species present in a microbial community, allows the study 
+of metabolic interactions, thus an insight for the actual microbial intaractions. 
 
-  Aim of this project is to integrate the produced data and knowledge of these twenty 
-  (and more) years and make use of the randomized flux sampling method 
-  to evaluate the metabolic interactions retrieved. 
-  To this end, thousands of publicly available reference microbial genomes will be 
-  selected, and their automatic metabolic network reconstructions will be implemented. 
-  Based on these models, cross-feeding interactions algorithms will be performed for groups
-  of species to extract key metabolic processes. 
-  New functions, implementing the recently developed Multiphase Monte Carlo Sampling (MMCS) approach \cite{chalkis2020geometric} in the framework  of the <em>dingo</em> library, will 
-  make use of the randomized flux sampling concept to evaluate the processes retrieved.
+Aim of this project is to integrate the produced data and knowledge of these twenty 
+(and more) years and make use of the randomized flux sampling method 
+to evaluate the metabolic interactions retrieved. 
+To this end, thousands of publicly available reference microbial genomes will be 
+selected, and their automatic metabolic network reconstructions will be implemented. 
+Based on these models, cross-feeding interactions algorithms will be performed for groups
+of species to extract key metabolic processes. 
+New functions, implementing the recently developed Multiphase Monte Carlo Sampling (MMCS) approach \cite{chalkis2020geometric} in the framework  of the <em>dingo</em> library, will 
+make use of the randomized flux sampling concept to evaluate the processes retrieved.
   </p>"
 
 # use "yes" to display the email contact button,
