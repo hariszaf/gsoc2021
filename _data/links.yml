@@ -1,5 +1,7 @@
 # links
-- url: "https://forum.getkirby.com/t/set-page-url-in-yaml/10572/8"
-  description: Springfield Jazz Enthusiasts
-- url: "#"
-  description: Springfield Young Professionals
+- url: "https://github.com/hariszaf/gsoc2021/blob/main/proposal.pdf"
+  description: My GSoC2021 proposal
+- url: "https://summerofcode.withgoogle.com/projects/#4835597543276544"
+  description: Acceptance
+- url: ""
+  description: Dingo branch for the needs of this project
