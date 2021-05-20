@@ -38,7 +38,7 @@ selected, and their automatic metabolic network reconstructions will be implemen
 Based on these models, cross-feeding interactions algorithms will be performed for groups
 of species to extract key metabolic processes. 
 New functions, implementing the recently developed Multiphase Monte Carlo Sampling (MMCS) approach in the framework  of the dingo library, will 
-make use of the randomized flux sampling concept to evaluate the processes retrieved."
+make use of the randomized flux sampling concept to evaluate the processes retrieved. [Google](http://google.com)"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
