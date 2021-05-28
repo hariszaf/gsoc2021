@@ -1,4 +1,22 @@
 # Degree
+- degree: Bachelor of Arts, Human Rights
+  uni: Yale University
+  year: 2004 &mdash; 2008
+  awards:
+    - award: Summa Cumme Laude graduate
+  summary: If you had any meaningful roles at college, feel free to write about them here  <a href="https://tolischal.github.io/GSoC2019/">visit other site</a>
+
+- degree: High School Diploma
+  uni: Springfield High School
+  year: 2004
+  award: Most likely to succeed
+  summary: You can choose to have either a single or multiple awards
+
+- degree: Weeks 1-2
+  uni: study 
+  award: build an idea
+  summary: You can 
+
 - degree: Weeks 1-2
   uni: Scientific literature
   summary: This project has great challenges both from the computational and the biological point-of-view. To this end, studying about \textit{how} someone could address the challenge of extracting inter-species metabolic processes out of genome-scale metabolic reconstuctions of the species present in a microbial community, will be essential. Here are some of the relative scientific papers.
