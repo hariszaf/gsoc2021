@@ -5,5 +5,7 @@
     - study: Summa<a href="https://tolischal.github.io/GSoC2019">visit other site</a>
 
 
-- studies:
-  - study: Summa<a href="https://tolischal.github.io/GSoC2019">visit other site</a>
+# - studies:
+#   - study: Summa<a href="https://tolischal.github.io/GSoC2019">visit other site</a>
+- url: "https://github.com/hariszaf/gsoc2021/blob/main/proposal.pdf"
+  description: My GSoC2021 proposal
