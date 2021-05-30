@@ -91,6 +91,14 @@
 
               {% for award in education.awards %}
               <li>{{ award.award }}</li>
+
+              
+              {% for link in site.data.links %}
+              <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
+              {% endfor %}
+
+
+
               {% endfor %}
             </ul>
 
