@@ -91,21 +91,11 @@
 
               {% for award in education.awards %}
               <li>{{ award.award }}</li>
-
               {% endfor %}
             </ul>
 
          </p>
 
-         <p class="resume-item-copy" itemprop="description"></p>
-            <ul class="resume-item-list">
-               {% for link in site.data.links %}
-               <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
-               {% endfor %}
-            </ul>
-
-
-         </p>
         </div>
 
 
@@ -118,9 +108,21 @@
          </div> -->
 
       <!-- {% endfor %} -->
+      <p class="resume-item-copy" itemprop="description"></p>
+         <ul class="resume-item-list">
+            {% for link in site.data.links %}
+            <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
+            {% endfor %}
+         </ul>
+      </p>
+
+
       </section>
       <!-- end Education -->
       {% endif %}
+
+
+
 
 
 
