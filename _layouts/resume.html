@@ -99,22 +99,15 @@
         </div>
 
 
-        <!-- <div class="resume-item">
-           <ul class="resume-item-list">
-           {% for link in site.data.links %}
-           <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
-           {% endfor %}
+        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
+        
+         <p class="resume-item-copy" itemprop="description"></p>
+            <ul class="resume-item-list">
+               {% for link in site.data.links %}
+               <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
+               {% endfor %}
             </ul>
-         </div> -->
-
-      <!-- {% endfor %} -->
-      <p class="resume-item-copy" itemprop="description"></p>
-         <ul class="resume-item-list">
-            {% for link in site.data.links %}
-            <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
-            {% endfor %}
-         </ul>
-      </p>
+         </p>
 
 
       </section>
