@@ -78,11 +78,17 @@
 
         {% for education in site.data.education %}
         <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
+
           <h3 class="resume-item-title" itemprop="name">{{ education.uni }}</h3>
+
           <h4 class="resume-item-details group" itemprop="description">{{ education.degree }} &bull; {{ education.year }}</h4>
+
           <h5 class="resume-item-details award-title" itemprop="description">{{ education.award }}</h5>
+
           <p class="resume-item-copy" itemprop="description">
+
             <ul class="resume-item-list">
+
               {% for award in education.awards %}
               <li>{{ award.award }}</li>
               {% endfor %}
@@ -93,13 +99,13 @@
         </div>
 
 
-        <div class="resume-item">
+        <!-- <div class="resume-item">
            <ul class="resume-item-list">
            {% for link in site.data.links %}
            <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
            {% endfor %}
             </ul>
-         </div>
+         </div> -->
 
       {% endfor %}
       </section>
@@ -110,7 +116,6 @@
 
 
       {% if site.resume_section_interests %}
-      <!-- begin Education -->
       <section class="content-section">
         <header class="section-header">
           <h2>Coding period</h2>
