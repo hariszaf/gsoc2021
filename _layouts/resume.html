@@ -85,7 +85,10 @@
 
             <h5 class="resume-item-details award-title" itemprop="description">{{ education.award }}</h5>
 
+            <p class="resume-item-copy">{{ education.summary }}</p>
+
             <p class="resume-item-copy" itemprop="description">
+
 
                <ul class="resume-item-list">
 
@@ -109,26 +112,30 @@
 
       {% if site.resume_section_interests %}
       <section class="content-section">
-        <header class="section-header">
-          <h2>Coding period</h2>
-        </header>
+         <header class="section-header">
+            <h2>Coding period</h2>
+         </header>
 
-        {% for education in site.data.education2 %}
-        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-          <h3 class="resume-item-title" itemprop="name">{{ education.uni }}</h3>
-          <h4 class="resume-item-details group" itemprop="description">{{ education.degree }} &bull; {{ education.year }}</h4>
-          <h5 class="resume-item-details award-title" itemprop="description">{{ education.award }}</h5>
-          <p class="resume-item-copy" itemprop="description">
-            <ul class="resume-item-list">
-              {% for award in education.awards %}
-              <li>{{ award.award }}</li>
-              {% endfor %}
-            </ul>
+         {% for education in site.data.education %}
+            <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
+               <h3 class="resume-item-title" itemprop="name">{{ education.uni }}</h3>
+               <h4 class="resume-item-details group" itemprop="description">{{ education.degree }} &bull; {{ education.year }}</h4>
+               <h5 class="resume-item-details award-title" itemprop="description">{{ education.award }}</h5>
 
 
-          <p class="resume-item-copy">{{ education.summary }}</p>
-        </div>
-        {% endfor %}
+               
+                  
+
+               <p class="resume-item-copy" itemprop="description">
+                  <ul class="resume-item-list">
+                  {% for award in education.awards %}
+                     <li>{{ award.award }}</li>
+                  {% endfor %}
+                  </ul>
+
+
+            </div>
+         {% endfor %}
       </section>
       <!-- end Education -->
       {% endif %}
