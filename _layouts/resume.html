@@ -89,8 +89,8 @@
 
             <ul class="resume-item-list">
 
-              {% for award in education.awards %}
-              <li>{{ award.award }}</li>
+              {% for award in education.urls %}
+              <li>{{ url.url }}</li>
               {% endfor %}
             </ul>
 
@@ -99,15 +99,6 @@
         </div>
 
 
-        <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-        
-         <p class="resume-item-copy" itemprop="description"></p>
-            <ul class="resume-item-list">
-               {% for link in site.data.links %}
-               <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
-               {% endfor %}
-            </ul>
-         </p>
 
 
       </section>
