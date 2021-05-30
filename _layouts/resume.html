@@ -92,18 +92,18 @@
               {% for award in education.awards %}
               <li>{{ award.award }}</li>
 
-
-              {% for link in site.resume_section_links %}
-              <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
-              {% endfor %}
-
-
-
               {% endfor %}
             </ul>
 
 
-          <p class="resume-item-copy">{{ education.summary }}</p>
+            <ul class="resume-item-list">
+               {% for link in site.data.links %}
+               <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
+               {% endfor %}
+            </ul>
+
+
+          </p>
         </div>
 
 
