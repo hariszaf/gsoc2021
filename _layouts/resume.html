@@ -89,8 +89,8 @@
 
             <ul class="resume-item-list">
 
-              {% for award in education.urls %}
-              <li>{{ url.url }}</li>
+              {% for award in education.awards %}
+              <li>{{ award.award }}</li>
               {% endfor %}
             </ul>
 

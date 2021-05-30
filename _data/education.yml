@@ -1,13 +1,10 @@
 - degree: Weeks 1-2
   uni: Scientific literature
   summary: This project has great challenges both from the computational and the biological point-of-view. To this end, studying about <em>how</em> someone could address the challenge of extracting inter-species metabolic processes out of genome-scale metabolic reconstuctions of the species present in a microbial community, will be essential. Here are some of the relative scientific papers.
-  urls:
-    - url: <a href="https://tolischal.github.io/GSoC2019">visit other site</a>
-    - url: <a href="https://github.com/hariszaf/gsoc2021/blob/main/proposal.pdf">My GSoC2021 proposal></a>
-    # - url: "https://summerofcode.withgoogle.com/projects/#4835597543276544"
-    #   description: Acceptance
-    # - url: ""
-    #   description: Dingo branch for the needs of this project
+  awards:
+    - award: Summa<a href="https://tolischal.github.io/GSoC2019">visit other site</a>
+    - award: "https://github.com/hariszaf/gsoc2021/blob/main/proposal.pdf"
+    - award: "https://summerofcode.withgoogle.com/projects/#4835597543276544"
 
 
 # - studies:
