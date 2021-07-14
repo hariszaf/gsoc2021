@@ -2,5 +2,15 @@
   uni: Scientific literature
   summary: This project has great challenges both from the computational and the biological point-of-view. To this end, studying about <em>how</em> someone could address the challenge of extracting inter-species metabolic processes out of genome-scale metabolic reconstuctions of the species present in a microbial community, will be essential. Here are some of the relative scientific papers. <br> It was a fortunate coincidence that just before this GSoC project started, a great review by Heinken et al. (2021) was published, describing both the framework of our work and the challenges, to a great extent.
   awards:
-    - award: <a href="https://doi.org/10.1016/j.coisb.2021.05.007">Advances in constraint-based modelling of microbial communities.pdf</a>
+    - award: <a href="https://doi.org/10.1016/j.coisb.2021.05.007">Advances in constraint-based modelling of microbial communities</a>
+    - award: <a href="https://journals.asm.org/doi/epub/10.1128/mSystems.00606-19">MICOM: Metagenome-Scale Modeling To Infer Metabolic Interactions in the Gut Microbiota</a>
+
+
+- degree: Weeks 3-4
+  uni: 
+  summary: 
+  awards: 
+    - award: 
+
+
 
