@@ -48,10 +48,9 @@
 
       </header>
 
-      {% if site.resume_section_experience %}
       <!-- begin Experience -->
+      {% if site.resume_section_experience %}
       <section class="content-section">
-
         <header class="section-header">
           <h2>Experience</h2>
         </header>
@@ -63,14 +62,13 @@
           <p class="resume-item-copy">{{ job.summary }}</p>
         </div><!-- end of resume-item -->
         {% endfor %}
-
       </section>
-      <!-- end Experience -->
       {% endif %}
+      <!-- end Experience -->
 
 
+      <!-- begin Bonding period - "Education" -->
       {% if site.resume_section_education %}
-      <!-- begin Education -->
       <section class="content-section">
          <header class="section-header">
             <h2>Bonding period</h2>
@@ -101,12 +99,11 @@
 
       {% endfor %}
       </section>
-      <!-- end Education -->
       {% endif %}
+      <!-- end Bondint period - "Education" -->
 
 
-
-
+      <!-- begin Coding period - "coding" -->
       {% if site.resume_section_coding %}
       <section class="content-section">
          <header class="section-header">
@@ -131,8 +128,33 @@
             </div>
          {% endfor %}
       </section>
-      <!-- end Education -->
       {% endif %}
+      <!-- end Coding period - "coding" -->
+
+
+
+
+
+
+      <!-- begin Links -->
+      {% if site.resume_section_links %}
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Additional Links</h2>
+        </header>
+
+        <div class="resume-item">
+          <ul class="resume-item-list">
+            {% for link in site.data.links %}
+            <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+      </section>
+      {% endif %}
+      <!-- end Links -->
 
 
 
@@ -145,18 +167,11 @@
 
 
 
+<!-- -----------------  NOT IN USE  ------------------------------- -->
 
 
-
-
-
-
-
-
-
-
-      {% if site.resume_section_projects %}
       <!-- begin Projects -->
+      {% if site.resume_section_projects %}
       <section class="content-section">
         <header class="section-header">
           <h2>Projects</h2>
@@ -172,11 +187,12 @@
         {% endfor %}
 
       </section>
-      <!-- end Projects -->
       {% endif %}
+      <!-- end Projects -->
 
-      {% if site.resume_section_skills %}
+
       <!-- begin Skills -->
+      {% if site.resume_section_skills %}
       <section class="content-section">
 
         <header class="section-header">
@@ -190,11 +206,13 @@
         {% endfor %}
 
       </section>
-      <!-- end Skills -->
       {% endif %}
+      <!-- end Skills -->
 
-      {% if site.resume_section_recognition %}
+
+
       <!-- begin Recognition -->
+      {% if site.resume_section_recognition %}
       <section class="content-section">
 
         <header class="section-header">
@@ -213,8 +231,8 @@
       <!-- end Recognition -->
       {% endif %}
 
-      {% if site.resume_section_associations %}
       <!-- begin Associations -->
+      {% if site.resume_section_associations %}
       <section class="content-section">
 
         <header class="section-header">
@@ -230,51 +248,11 @@
         {% endfor %}
 
       </section>
+      {% endif %}
       <!-- end Associations -->
-      {% endif %}
 
-      <!-- {% if site.resume_section_interests %}
-      begin Interests
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Outside Interests</h2>
-        </header>
-
-        <div class="resume-item">
-          <ul class="resume-item-list">
-            {% for interest in site.data.interests %}
-            <li>{{ interest.description }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-
-      </section>
-      <!-- end Interests -->
-      {% endif %}
-
-      {% if site.resume_section_links %}
-      <!-- begin Links -->
-      <section class="content-section">
-
-        <header class="section-header">
-          <h2>Additional Links</h2>
-        </header>
-
-        <div class="resume-item">
-          <ul class="resume-item-list">
-            {% for link in site.data.links %}
-            <li><a href={{ link.url }} itemprop="url">{{ link.description }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-
-      </section>
-      <!-- end Links -->
-      {% endif %}
-
-      {% if site.resume_print_social_links %}
       <!-- begin Print Social Links -->
+      {% if site.resume_print_social_links %}
       <section class="content-section print-only">
 
         <header class="section-header">
@@ -286,9 +264,14 @@
         </div>
 
       </section>
-      <!-- end Print Social Links -->
       {% endif %}
+      <!-- end Print Social Links -->
 
+
+<!-- ------------------------------------------------------------ -->
+
+
+      <!-- Footer! -->
       <footer class="page-footer">
         <p class="footer-line">Made by <a href="http://twitter.com/jglovier">@jglovier</a>. Fork me on <a href="https://github.com/jglovier/resume-template">GitHub</a>.</p>
         <p class="footer-line">If this is your live resume, you can modify or remove this part. ;-)</p>
