@@ -11,3 +11,4 @@
 *.toc
 literature/
 *.png
+.ipynb_checkpoints/
