@@ -110,10 +110,10 @@
             <h2>Coding period</h2>
          </header>
 
-         {% for education in site.data.coding %}
+         {% for chunk in site.data.coding %}
             <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
-               <h3 class="resume-item-title" itemprop="name">{{ coding.uni }}</h3>
-               <h4 class="resume-item-details group" itemprop="description">{{ ecoding.degree }} &bull; {{ education.year }}</h4>
+               <h3 class="resume-item-title" itemprop="name">{{ chunk.task }}</h3>
+               <h4 class="resume-item-details group" itemprop="description">{{ coding.time }} </h4>
                <h5 class="resume-item-details award-title" itemprop="description">{{ coding.award }}</h5>
 
 
