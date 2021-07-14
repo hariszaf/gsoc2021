@@ -1,4 +1,4 @@
-- time: Weeks 1-2
+- time: Weeks '#'1 and '#'2
   task: The challenges
   summary: As expected, there is a great  
   urls:
@@ -6,8 +6,8 @@
 
 
 
-- time: Weeks 1-2
-  task: The challenges
+- time: Weeks '#'1 and '#'2
+  task: The challenges22
   summary: As expected, there is a great  
   urls:
     - url: <a href="https://doi.org/10.1016/j.coisb.2021.05.007">Advances in constraint-based modelling of microbial communities.pdf</a>

@@ -48,23 +48,6 @@
 
       </header>
 
-      <!-- begin Experience -->
-      {% if site.resume_section_experience %}
-      <section class="content-section">
-        <header class="section-header">
-          <h2>Experience</h2>
-        </header>
-
-        {% for job in site.data.experience %}
-        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
-          <h3 class="resume-item-title" itemprop="name">{{ job.company }}</h3>
-          <h4 class="resume-item-details" itemprop="description">{{ job.position }} &bull; {{ job.duration }}</h4>
-          <p class="resume-item-copy">{{ job.summary }}</p>
-        </div><!-- end of resume-item -->
-        {% endfor %}
-      </section>
-      {% endif %}
-      <!-- end Experience -->
 
 
       <!-- begin Bonding period - "Education" -->
@@ -113,14 +96,14 @@
          {% for chunk in site.data.coding %}
             <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
                <h3 class="resume-item-title" itemprop="name">{{ chunk.task }}</h3>
-               <h4 class="resume-item-details group" itemprop="description">{{ coding.time }} </h4>
-               <h5 class="resume-item-details award-title" itemprop="description">{{ coding.award }}</h5>
+               <h4 class="resume-item-details group" itemprop="description">{{ chunk.time }} </h4>
+               <h5 class="resume-item-details award-title" itemprop="description">{{ chunk.award }}</h5>
 
 
                <p class="resume-item-copy" itemprop="description">
                   <ul class="resume-item-list">
-                  {% for award in coding.awards %}
-                     <li>{{ coding.award }}</li>
+                  {% for award in chunk.awards %}
+                     <li>{{ chunk.award }}</li>
                   {% endfor %}
                   </ul>
 
@@ -209,6 +192,23 @@
       {% endif %}
       <!-- end Skills -->
 
+      <!-- begin Experience -->
+      {% if site.resume_section_experience %}
+      <section class="content-section">
+        <header class="section-header">
+          <h2>Experience</h2>
+        </header>
+
+        {% for job in site.data.experience %}
+        <div class="resume-item" itemscope itemprop="worksFor" itemtype="http://schema.org/Organization">
+          <h3 class="resume-item-title" itemprop="name">{{ job.company }}</h3>
+          <h4 class="resume-item-details" itemprop="description">{{ job.position }} &bull; {{ job.duration }}</h4>
+          <p class="resume-item-copy">{{ job.summary }}</p>
+        </div><!-- end of resume-item -->
+        {% endfor %}
+      </section>
+      {% endif %}
+      <!-- end Experience -->
 
 
       <!-- begin Recognition -->
