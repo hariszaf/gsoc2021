@@ -16,4 +16,10 @@
 
 - degree: overall 
   uni: Conclusions after the bonding period
-  summary: My interaction with microbiologists highlighted the challenges of the project. The scientific literature retrieved represents that there are strong ongoing efforts that try to address the question of interspecies metabolic interactions inference. Flux samling could be a breakthrough to this point. 
+  summary: My interaction with microbiologists highlighted the challenges of the project. The scientific literature retrieved represents that there are strong ongoing efforts that try to address the question of interspecies metabolic interactions inference. Flux samling could be a breakthrough to this point. Here are some key resources strongly related to metabolic modelling of microbial taxa that could be used in a framework as the one of this GSoC project. 
+  awards: 
+    - award: <a href="10.1186/s13059-019-1769-1">A systematic assessment of current genome-scale metabolic reconstruction tools</a>
+    - award: <a href=""></a>
+    - award: <a href=""></a>
+
+    https://modelseed.org/
