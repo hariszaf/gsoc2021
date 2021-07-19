@@ -8,7 +8,7 @@
 
 - degree: Week 3
   uni: Setting up our working framework
-  summary: A GitHub repository has already been initiated for this project. The proposal can be found there as well as the source code of this GitHub pages blog. In addition, a fork of the main `dingo` GitHub repository was built. PRs will be implemented from this fork to the main   `dingo` repository.  
+  summary: A GitHub repository has already been initiated for this project. The proposal can be found there as well as the source code of this GitHub pages blog. In addition, a fork of the main `dingo` GitHub repository was built. PRs will be implemented from this fork to the main `dingo` repository.  
   awards: 
     - award: <a href="https://github.com/hariszaf/dingo"> A fork of dingo was built for testing purposes</a>
     - award: <a href="https://github.com/hariszaf/gsoc2021"> GitHub repository for this GSoC project.</a>
@@ -19,7 +19,7 @@
   summary: My interaction with microbiologists highlighted the challenges of the project. The scientific literature retrieved represents that there are strong ongoing efforts that try to address the question of interspecies metabolic interactions inference. Flux samling could be a breakthrough to this point. Here are some key resources strongly related to metabolic modelling of microbial taxa that could be used in a framework as the one of this GSoC project. 
   awards: 
     - award: <a href="10.1186/s13059-019-1769-1">A systematic assessment of current genome-scale metabolic reconstruction tools</a>
-    - award: <a href=""></a>
-    - award: <a href="https://modelseed.org/"></a>
+    - award: <a href="https://www.kbase.us/">KBase</a>
+    - award: <a href="https://modelseed.org/">ModelSEED</a>
 
     
