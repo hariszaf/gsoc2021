@@ -16,10 +16,10 @@
 
 - degree: overall 
   uni: Conclusions after the bonding period
-  summary: My interaction with microbiologists highlighted the challenges of the project. The scientific literature retrieved represents that there are strong ongoing efforts that try to address the question of interspecies metabolic interactions inference. Flux samling could be a breakthrough to this point. Here are some key resources strongly related to metabolic modelling of microbial taxa that could be used in a framework as the one of this GSoC project. 
+  summary: My interaction with microbiologists highlighted the challenges of the project. The scientific literature retrieved represents that there are strong ongoing efforts that try to address the question of interspecies metabolic interactions inference. Here are some key resources strongly related to metabolic modelling of microbial taxa that could be used in a framework as the one of this GSoC project. 
   awards: 
-    - award: <a href="10.1186/s13059-019-1769-1">A systematic assessment of current genome-scale metabolic reconstruction tools</a>
+    - award: <a href="https://doi.org/10.1186/s13059-019-1769-1">A systematic assessment of current genome-scale metabolic reconstruction tools</a>
     - award: <a href="https://www.kbase.us/">KBase</a>
     - award: <a href="https://modelseed.org/">ModelSEED</a>
-
+  approach: After the bonding period I have now a specific plan for this project. My framework will be to model a microbial community using the assumptions that <em>micom</em> does and instead of Flux Balance Analysis (FBA) implement the Multiphase Monte Carlo Sampling algorith of <em>dingo</em>. This way, the 
     
