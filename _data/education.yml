@@ -1,6 +1,6 @@
 - degree: Weeks 1-2
   uni: Scientific literature
-  summary: This project has great challenges both from the computational and the biological point-of-view. To this end, studying about <em>how</em> someone could address the challenge of extracting inter-species metabolic processes out of genome-scale metabolic reconstuctions of the species present in a microbial community, will be essential. Here are some of the relative scientific papers. <br> It was a fortunate coincidence that just before this GSoC project started, <a href="https://doi.org/10.1016/j.coisb.2021.05.007"> a great review by Heinken et al. (2021) </a> was published, describing both the framework of our work and the challenges, to a great extent. Here is some extra related literature.
+  summary: This project has great challenges both from the computational and the biological point-of-view. To this end, studying about <em>how</em> someone could address the challenge of extracting inter-species metabolic processes out of genome-scale metabolic reconstuctions of the species present in a microbial community, will be essential. <br> It was a fortunate coincidence that just before this GSoC project started, <a href="https://doi.org/10.1016/j.coisb.2021.05.007"> a great review by Heinken et al. (2021) </a> was published, describing both the framework of our work and the challenges, to a great extent. Here is some extra related literature.
   awards:
     - award: <a href="https://doi.org/10.1186/s12859-016-1230-3"> MMinte an application for predicting metabolic interactions among the microbial species in a community</a>
     - award: <a href="https://journals.asm.org/doi/epub/10.1128/mSystems.00606-19"> MICOM Metagenome-Scale Modeling To Infer Metabolic Interactions in the Gut Microbiota</a>
@@ -19,9 +19,8 @@
     - award: <a href="https://modelseed.org/">ModelSEED</a>
 
 
-
 - degree: overall 
   uni: Conclusions after the bonding period
   summary: My interaction with microbiologists highlighted the challenges of the project. The scientific literature retrieved represents that there are strong ongoing efforts that try to address the question of interspecies metabolic interactions inference. 
-  approach: After the bonding period I have now a specific plan for this project. My framework will be to model a microbial community using the assumptions that <em>micom</em> does and instead of Flux Balance Analysis (FBA) implement the Multiphase Monte Carlo Sampling algorith of <em>dingo</em>. This way, the 
+  approach: After the bonding period I have now a specific plan for this project. I will model a microbial community using the same assumptions with <em>micom</em> but instead of Flux Balance Analysis (FBA) implement the Multiphase Monte Carlo Sampling algorith of <em>dingo</em>. This way, I will be able to investigate how the flux distribution of a reaction of a species present, affects the same or another reaction of another species of the community. For starters, we will work with hypothetical communities of 2 species. 
     
