@@ -9,9 +9,9 @@
 
 - degree: Week 3
   uni: Setting up our working framework
-  summary: A GitHub repository has already been initiated for this project. The proposal can be found there as well as the source code of this GitHub pages blog. In addition, a fork of the main <i>dingo<\i> GitHub repository was built. PRs will be implemented from this fork to the main <i>dingo<\i> repository.  
+  summary: A GitHub repository has already been initiated for this project. The proposal can be found there as well as the source code of this GitHub pages blog. In addition, a fork of the main <i>dingo</i> GitHub repository was built. PRs will be implemented from this fork to the main <i>dingo</i> repository.  
   awards: 
-    - award: <a href="https://github.com/hariszaf/dingo"> A fork of <i>dingo<\i> was built for testing purposes</a>
+    - award: <a href="https://github.com/hariszaf/dingo"> A fork of <i>dingo</i> was built for testing purposes</a>
     - award: <a href="https://github.com/hariszaf/gsoc2021"> GitHub repository for this GSoC project.</a>
 
 
