@@ -74,6 +74,16 @@
                   {% endfor %}
                </ul>
             </p>
+            <p class="resume-item-copy">{{ education.summary_b }}</p>
+
+            <p class="resume-item-copy" itemprop="description">
+
+               <ul class="resume-item-list">
+                  {% for award in education.awards_b %}
+                     <li>{{ award.award }}</li>
+                  {% endfor %}
+               </ul>
+            </p>
             <p class="resume-item-copy">{{ education.approach }}</p>
          </div>
 
