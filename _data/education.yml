@@ -5,6 +5,7 @@
     - award: <a href="https://doi.org/10.1016/j.coisb.2021.05.007">Advances in constraint-based modelling of microbial communities</a>
     - award: <a href="https://doi.org/10.1186/s12859-016-1230-3"> MMinte an application for predicting metabolic interactions among the microbial species in a community</a>
     - award: <a href="https://journals.asm.org/doi/epub/10.1128/mSystems.00606-19"> MICOM Metagenome-Scale Modeling To Infer Metabolic Interactions in the Gut Microbiota</a>
+    - award: <a href="https://www.nature.com/articles/s41587-020-0446-y#change-history">MEMOTE for standardized genome-scale metabolic model testing </a>
 
 - degree: Week 3
   uni: Setting up our working framework
