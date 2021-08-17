@@ -1,12 +1,17 @@
 - time: Weeks 1-2
-  task: The challenges
-  summary: As expected, there is a great  
+  task: Get the models 
+  summary: Metabolic network reconstruction is a far from easy task. In case of bacteria, semi-automated ways make things a bit easier, for example <a href="https://carveme.readthedocs.io/en/latest/index.html"><em>carveme</em></a> is a software tool that takes a genome as input to build its corresponding metabolic model. <br> 
+  The GTDB genomes described in the proposal were thoroughly investigated, however as they only include a short number of genes and not the complete genome, I used the <a href="https://github.com/cdanielmachado/embl_gems">EMBL genome scale models<\a> by building a script for converting them from <em>.xml<\em> to <em>.mat<\em> format. <br>
+    <em>carveme<\em> needs the <a href="https://www.ibm.com/analytics/cplex-optimizer">IBM CPLEX Optimizer</a>. As CPLEX academic license
+
+  Full features but limited to 1000 variables and 1000 constraints 
+   as they included only a number of genes, already built models were prefered. In addition, installing CPLEX 
   urls:
     - url: <a href="https://doi.org/10.1016/j.coisb.2021.05.007">Advances in constraint-based modelling of microbial communities.pdf</a>
 
 
 
-- time: Week
+- time: Week 3 
   task: Our framework
   summary:   
   urls:
