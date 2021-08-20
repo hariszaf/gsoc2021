@@ -8,7 +8,7 @@
 
 - time: Weeks 5 - 6
   task: How to validate our future outcome?
-  summary: As described in the proposal, the step of finding a way to validate the outcome of this new <em>dingo</em> module I have described, is probably the hardest one. The SMETANA software that was initially meant to be used for this task, did not fit for this task. Several ongoing approaches aim to address this challenge, such as the recently published `Metage2Metabo` software tool ([publication](https://elifesciences.org/articles/61968) and [GitHub repo](https://github.com/AuReMe/metage2metabo)). I will use this software in the near future to compare its findings with those that the <em>dingo</em> module I am working at will return.  
+  summary: As described in the proposal, the step of finding a way to validate the outcome of this new <em>dingo</em> module I have described, is probably the hardest one. The SMETANA software that was initially meant to be used for this task, did not fit for this task. Several ongoing approaches aim to address this challenge, such as the recently published `Metage2Metabo` software tool (<a href="https://elifesciences.org/articles/61968">publication</a> and <a href="https://github.com/AuReMe/metage2metabo">GitHub repo</a>). I will use this software in the near future to compare its findings with those that the <em>dingo</em> module I am working at will return.  
 
 
 - time: Weeks 
