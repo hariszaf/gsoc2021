@@ -142,9 +142,8 @@
       <!-- end Skills -->
 
 
-
       <!-- begin Future Work -->
-      {% if site.resume_section_links %}
+      {% if site.future %}
       <section class="content-section">
 
         <header class="section-header">
@@ -153,8 +152,8 @@
 
         <div class="resume-item">
           <ul class="resume-item-list">
-            {% for link in site.data.links %}
-            <a href={{ link.url }} itemprop="url">{{ link.description }}</a>
+            {% for job in site.data.future %}
+            <a href={{ job.task }} itemprop="task">{{ job.task }}</a>
             {% endfor %}
           </ul>
         </div>
@@ -162,13 +161,6 @@
       </section>
       {% endif %}
       <!-- end Future Work -->
-
-
-
-
-
-
-
 
       <!-- begin Links -->
       {% if site.resume_section_links %}
