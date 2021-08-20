@@ -1,4 +1,11 @@
 # Summary of my GSoC work
 # Metabolic models in .mat format 
-- skill: Initiate a <em>dingo</em> database with metabolic models in <em>.mat</em> format
-  description: More than  <a href="https://github.com/hariszaf/dingo/tree/pairs/embl_gems">6,000 models</em> most of them converted by the <a href="https://github.com/cdanielmachado/embl_gems">EMBL GEMs</a>
+- skill: <em>dingo</em> database of metabolic models in <em>.mat</em> format init
+  description: More than <a href="https://github.com/hariszaf/dingo/tree/pairs/embl_gems">6,000 models</em></a> most of them converted by the <a href="https://github.com/cdanielmachado/embl_gems">EMBL GEMs</a>
+
+
+- skill: <em>dingo</em> and <em>how to contribute</em> tutorials 
+  description: You may find the notebook on this <a href="https://colab.research.google.com/drive/1AdXCo6tMBV4lPDYWWOXhzcM0wg30OOIx?usp=sharing">link</a>. My BOSC presentation will soon be available on the community's <a href="https://www.youtube.com/playlist?list=PLir-OOQiOhXZ6jV_cld3Hp-C_0m4aCznk">YouTube channel</a>. The notebook and a <em>how to contribute</em> tutorial can be found under <a href="https://github.com/GeomScale/dingo/pull/17">PR_#17</a>
+
+- skill: Sampling on the flux space of multiple metabolic networks
+  description: The module can be found under <a href="https://github.com/GeomScale/dingo/pull/18">PR_#18</a>. 
