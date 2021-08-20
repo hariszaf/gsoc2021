@@ -49,7 +49,6 @@
       </header>
 
 
-
       <!-- begin Bonding period - "Education" -->
       {% if site.resume_section_education %}
       <section class="content-section">
@@ -124,11 +123,7 @@
       <!-- end Coding period - "coding" -->
 
 
-
-
-
-
-      <!-- begin Skills -->
+      <!-- begin Skills, aka Summary of my GSoC work-->
       {% if site.resume_section_skills %}
       <section class="content-section">
 
@@ -145,6 +140,29 @@
       </section>
       {% endif %}
       <!-- end Skills -->
+
+
+
+      <!-- begin Future Work -->
+      {% if site.resume_section_links %}
+      <section class="content-section">
+
+        <header class="section-header">
+          <h2>Future work</h2>
+        </header>
+
+        <div class="resume-item">
+          <ul class="resume-item-list">
+            {% for link in site.data.links %}
+            <a href={{ link.url }} itemprop="url">{{ link.description }}</a>
+            {% endfor %}
+          </ul>
+        </div>
+
+      </section>
+      {% endif %}
+      <!-- end Future Work -->
+
 
 
 
@@ -171,14 +189,6 @@
       </section>
       {% endif %}
       <!-- end Links -->
-
-
-
-
-
-
-
-
 
 
 
@@ -226,7 +236,6 @@
       </section>
       {% endif %}
       <!-- end Experience -->
-
 
       <!-- begin Recognition -->
       {% if site.resume_section_recognition %}

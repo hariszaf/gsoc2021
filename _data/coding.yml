@@ -13,3 +13,7 @@
 - time: Weeks 7-9
   task: Sample on the flux space of pairs of bacteria
   summary: During these 3 weeks, I developed the new <em>dingo</em> module as described in my proposal. To this end, I built 2 new classes following the scheme of <em>dingo</em>; the first one, called <em>CommunityMetabolicNetwork</em>, builds a community metabolic model based on multiple metabolic networks, and the second, called <em>CommunityPolytopeSampler</em> gets the polytope derived from that model and implements flux sampling on that. The new module can be invoked both from a terminal and a Python console through the <em>dingo</em> library. For more, you may check the <a href="https://github.com/GeomScale/dingo/pull/18">Sampling on the flux space of multiple metabolic networks_#18</a> PR. In addition, on the same PR, you will also find the script and the models built during Weeks 1-4 of this GSoC project.  
+
+- time: Week 10
+  task: Tests and documentation 
+  summary: During the last week, tests were made to check how the new module responses with various example cases. An example directory was added under the <em>ext_data</em> directory with a community of 2 models. Instructions about how to use the new module were added in the Google Colab notebook.
