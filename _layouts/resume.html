@@ -151,11 +151,9 @@
         </header>
 
         <div class="resume-item">
-          <ul class="resume-item-list">
-            {% for job in site.data.future %}
-            <p class="resume-item-copy">{{ job.task }}</p>
+            {% for task in site.data.future %}
+            <p class="resume-item-copy">{{ task.task }}</p>
             {% endfor %}
-          </ul>
         </div>
 
       </section>
