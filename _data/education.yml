@@ -1,5 +1,5 @@
 - degree: Weeks 1-2
-  uni: Scientific literature
+  uni: Studying the literature
   summary: This project has great challenges both from the computational and the biological point-of-view. To this end, studying about <em>how</em> someone could address the challenge of extracting inter-species metabolic processes out of genome-scale metabolic reconstuctions of the species present in a microbial community, will be essential. <br> It was a fortunate coincidence that just before this GSoC project started, <a href="https://doi.org/10.1016/j.coisb.2021.05.007"> a great review by Heinken et al. (2021) </a> was published, describing both the framework of our work and the challenges, to a great extent. Here is some extra related literature.
   awards:
     - award: <a href="https://doi.org/10.1186/s12859-016-1230-3"> MMinte an application for predicting metabolic interactions among the microbial species in a community</a>
@@ -8,7 +8,7 @@
 
 - degree: Week 3
   uni: Setting up our working framework
-  summary: A GitHub repository has already been initiated for this project. The proposal can be found there as well as the source code of this GitHub pages blog. In addition, a fork of the main <i>dingo</i> GitHub repository was built. PRs will be implemented from this fork to the main <i>dingo</i> repository.  
+  summary: A GitHub repository has already been initiated for this project. The proposal can be found there as well as the source code of this GitHub pages blog. In addition, a fork of the main <i>dingo</i> GitHub repository was built. Pull Requests (PRs) will be implemented from this fork to the main <i>dingo</i> repository.  
   awards: 
     - award: <a href="https://github.com/hariszaf/dingo"> A fork of <i>dingo</i> was built for testing purposes</a>
     - award: <a href="https://github.com/hariszaf/gsoc2021"> GitHub repository for this GSoC project.</a>
