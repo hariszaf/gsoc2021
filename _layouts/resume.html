@@ -149,12 +149,12 @@
         <header class="section-header">
           <h2>Future work</h2>
         </header>
-
+        
+        {% for task in site.data.future %}
         <div class="resume-item">
-            {% for task in site.data.future %}
-            <p class="resume-item-copy">{{ task.task }}</p>
-            {% endfor %}
+        <p class="resume-item-copy">{{ task.task }}</p>            
         </div>
+        {% endfor %}
 
       </section>
       {% endif %}
