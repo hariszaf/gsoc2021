@@ -1,12 +1,4 @@
-# Skills
-# Organizational leadership
-- skill: Organizational leadership
-  description: I have several years of experience leading organziations from community groups to business departments. From public speaking, to mentoring, to coordination of people and events, I can lead in any context.
-
-# Communications strategy
-- skill: Communications strategy
-  description: Content and marketing strategy,
-
-# Digital content development and creation
-- skill: Digital content development and creation
-  description: Copy writing, graphic design, web design, front-end web development, print design
+# Summary of my GSoC work
+# Metabolic models in .mat format 
+- skill: Initiate a <em>dingo</em> database with metabolic models in <em>.mat</em> format
+  description: More than  <a href="https://github.com/hariszaf/dingo/tree/pairs/embl_gems">6,000 models</em> most of them converted by the <a href="https://github.com/cdanielmachado/embl_gems">EMBL GEMs</a>
